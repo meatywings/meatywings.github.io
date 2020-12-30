@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- production version, optimized for size and speed -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elijah Blowes</title>
 </head>
 <body>
-    <p>Landing Page</p>
+    <div id="heading">
+        <h1> {{ name }} </h1>
+    </div>
+
+    <div id="navigation">
+        <ul>
+            <li v-for="heading in headings">
+                <a v-bind:href="heading.toLowerCase() + '.html'"> {{ heading }} </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="main">
+        {{ content }}
+    </div>
+
+    <script src="heading.js"></script>
+    <script src="navigation.js"></script>
+    <script src="main.js"></script>
+    
 </body>
 </html>
